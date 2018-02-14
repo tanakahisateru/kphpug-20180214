@@ -2,14 +2,13 @@
 
 namespace App\Service;
 
-class NiceToMeetYou implements GreeterInterface
+class NiceToMeetYou extends AbstractGreeter
 {
     /**
-     * @param string $name
-     * @return string
+     * @inheritdoc
      */
-    public function greet(string $name): string
+    protected function messagePrefix(): string
     {
-        return "Nice to meet you, " . $name;
+        return "Nice to meet you,";
     }
 }

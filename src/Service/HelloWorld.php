@@ -2,15 +2,13 @@
 
 namespace App\Service;
 
-class HelloWorld implements GreeterInterface
+class HelloWorld extends AbstractGreeter
 {
     /**
-     * @param string $name
-     * @return string
+     * @inheritdoc
      */
-    public function greet(string $name): string
+    protected function messagePrefix(): string
     {
-        return "Hello " . $name;
+        return "Hello";
     }
-
 }
