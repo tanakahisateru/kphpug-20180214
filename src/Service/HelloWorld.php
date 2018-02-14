@@ -2,13 +2,13 @@
 
 namespace App\Service;
 
-class HelloWorld
+class HelloWorld implements GreeterInterface
 {
     /**
      * @param string $name
      * @return string
      */
-    public function greet($name)
+    public function greet(string $name): string
     {
         return "Hello " . $name;
     }

@@ -2,7 +2,7 @@
 
 namespace App\Controller;
 
-use App\Service\HelloWorld;
+use App\Service\GreeterInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
@@ -10,17 +10,17 @@ use Symfony\Component\HttpFoundation\Response;
 class HelloWorldController extends Controller
 {
     /**
-     * @var HelloWorld
+     * @var GreeterInterface
      */
-    private $helloWorld;
+    private $greeter;
 
     /**
      * @required
-     * @param HelloWorld $helloWorld
+     * @param GreeterInterface $greeter
      */
-    public function setHelloWorld(HelloWorld $helloWorld): void
+    public function setGreeter(GreeterInterface $greeter): void
     {
-        $this->helloWorld = $helloWorld;
+        $this->greeter = $greeter;
     }
 
     /**
@@ -29,7 +29,7 @@ class HelloWorldController extends Controller
      */
     public function getIndex(): Response
     {
-        $greetingMessage = $this->helloWorld->greet('World');
+        $greetingMessage = $this->greeter->greet('World');
         return $this->render('hello-world.html.twig', [
             'title' => $greetingMessage,
             'message' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
