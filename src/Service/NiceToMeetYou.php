@@ -2,9 +2,9 @@
 
 namespace App\Service;
 
-class HelloWorld extends AbstractGreeter
+class NiceToMeetYou extends AbstractGreeter
 {
-    private const MESSAGE_PREFIX = "Hello";
+    private const MESSAGE_PREFIX = "Nice to meet you,";
 
     /**
      * @inheritdoc
